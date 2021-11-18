@@ -584,9 +584,9 @@ namespace HTERobot {
     //% line.min=0 line.max=7 
     //% weight=90
     //% group=OLED 
-
-    export function showUserText(line: number, text: string) {
-
+    
+    export function showUserText(index: number, text: string) {
+        let line = index;
         setText(line, 0);
         for (let c of text) {
             putChar(c);
@@ -607,12 +607,14 @@ namespace HTERobot {
     //% line.min=0 line.max=7 
     //% weight=90
     //% group=OLED 
-    export function showUserNumber(line: number, n: number) {
-
+    export function showUserNumber(index: number, num: number) {
+        let line = index
+        let n = num
         HTERobot.showUserText(line, "" + n)
     }
 
-    function writeCustomChar(c: string) {
+    function writeCustomChar(str: string) {
+        let c = str;
         for (let i = 0; i < 8; i++) {
             writeData(c.charCodeAt(i));
         }
