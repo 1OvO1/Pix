@@ -670,7 +670,8 @@ namespace HTERobot {
         cmd(0x10 + ((8 * c >> 4) & 0x0F));   //set column higher address
     }
 
-    function putChar(c: string) {
+    function putChar(str: string) {
+        let c = str;
         let c1 = c.charCodeAt(0);
         writeCustomChar(basicFont[c1 - 32]);
     }
@@ -686,7 +687,8 @@ namespace HTERobot {
     //% weight=90
     //% group=OLED 
     
-    export function showUserText(line: number, text: string) {
+    export function showUserText(line: number, str: string) {
+        let text = str;
         setText(line, 0);
         for (let c of text) {
             putChar(c);
