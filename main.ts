@@ -707,8 +707,7 @@ namespace HTERobot {
     //% line.min=0 line.max=7 
     //% weight=90
     //% group=OLED 
-    export function showUserNumber(line: number, num: number) {
-        let n = num
+    export function showUserNumber(line: number, n: number) {
         HTERobot.showUserText(line, "" + n)
     }
 
