@@ -594,7 +594,7 @@ namespace HTERobot {
 
         for (let i = text.length; i < 16; i++) {
             setText(line, i);
-            putChar(" ");
+            // putChar(" ");
         }
     }
 	    /**
