@@ -711,7 +711,8 @@ namespace HTERobot {
         HTERobot.showUserText(line, "" + n)
     }
 
-    function writeCustomChar(c: string) {
+    function writeCustomChar(str: string) {
+        let c = str;
         for (let i = 0; i < 8; i++) {
             writeData(c.charCodeAt(i));
         }
