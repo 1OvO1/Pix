@@ -1258,14 +1258,8 @@ namespace HTERobot {
         let pin = ReadExpandAnalogPin(index);
         let voltage = 0;
         let temperature = 0;
-        voltage = pins.map(
-            pins.analogReadPin(pin),
-            0,
-            1023,
-            0,
-            100
-        );
-        temperature = voltage*3.3;
+        voltage = pins.analogReadPin(pin),
+        temperature = voltage*500/1024;
         return Math.round(temperature)   
     }
 }   
