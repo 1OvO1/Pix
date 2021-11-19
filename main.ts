@@ -388,7 +388,6 @@ namespace HTERobot {
         pins.digitalWritePin(pin, Value);
     }
 
-
     /**
      * 拓展模拟引脚读入函数
      * @param index eg:A0,A1,A2
@@ -521,7 +520,6 @@ namespace HTERobot {
         MotorRun(index, 0);
     }
 
-
     /**
      * HTERobot_i2cwriteReg
      */
@@ -547,9 +545,7 @@ namespace HTERobot {
         return val;
     }
 
-
     // 颜色传感器 TCS34725 初始化
-    
     function tcs34725_begin(): boolean {
         TCS34725_BEGIN = 0;
         let id = i2creadReg(TCS34725_ADDRESS, REG_TCS34725_ID | REG_TCS34725_COMMAND_BIT);
@@ -1257,7 +1253,7 @@ namespace HTERobot {
         let voltage = 0;
         let temperature = 0;
         voltage = pins.analogReadPin(pin),
-        temperature = voltage*500/1024;
+        temperature = voltage*330/1024;
         return Math.round(temperature)   
     }
 
