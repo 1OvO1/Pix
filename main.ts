@@ -1228,7 +1228,6 @@ namespace HTERobot {
 
     /**
      * 光敏传感器获取光照强度值 (0~100)
-     * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
      */
     //% blockId="readlightintensity" block="光敏传感器 %index (0~100)"
     //% group=模块
@@ -1249,7 +1248,6 @@ namespace HTERobot {
     }
     /**
      * 温度传感器LM35DZ获取温度值
-     * @param lightintensitypin describe parameter here, eg: AnalogPin.P1
      */
     //% blockId="readtemperature" block="温度传感器 %index (0~100)"
     //% group=模块
@@ -1261,5 +1259,30 @@ namespace HTERobot {
         voltage = pins.analogReadPin(pin),
         temperature = voltage*500/1024;
         return Math.round(temperature)   
+    }
+
+    /**
+     * 模拟传感器获取数据值
+     */
+    //% blockId="ReadAnalogSensor" block="模拟传感器 %index (0~1023)"
+    //% group=模块
+    //% weight=9
+    export function ReadAnalogSensor(index: ExpandAnalogPins): number {
+        let pin = ReadExpandAnalogPin(index);
+        let data = 0;
+        data = pins.analogReadPin(pin)
+        return Math.round(data)   
+    }
+    /**
+     * 数字传感器获取数据值
+     */
+    //% blockId="ReadDigitalSensor" block="数字传感器 %index (0/1)"
+    //% group=模块
+    //% weight=10
+    export function ReadDigitalSensor(index: ExpandDigitalPins): number {
+        let pin = ReadExpandDigitalPin(index);
+        let data = 0;
+        data = pins.digitalReadPin(pin)
+        return Math.round(data)   
     }
 }   
