@@ -1266,7 +1266,7 @@ namespace HTERobot {
      */
     //% blockId="ReadAnalogSensor" block="模拟传感器 %index (0~1023)"
     //% group=模块
-    //% weight=9
+    //% weight=11
     export function ReadAnalogSensor(index: ExpandAnalogPins): number {
         let pin = ReadExpandAnalogPin(index);
         let data = 0;
@@ -1278,7 +1278,7 @@ namespace HTERobot {
      */
     //% blockId="ReadDigitalSensor" block="数字传感器 %index (0/1)"
     //% group=模块
-    //% weight=10
+    //% weight=12
     export function ReadDigitalSensor(index: ExpandDigitalPins): number {
         let pin = ReadExpandDigitalPin(index);
         let data = 0;
