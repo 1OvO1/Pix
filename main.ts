@@ -670,8 +670,7 @@ namespace HTERobot {
         cmd(0x10 + ((8 * c >> 4) & 0x0F));   //set column higher address
     }
 
-    function putChar(str: string) {
-        let c = str;
+    function putChar(c: string) {
         let c1 = c.charCodeAt(0);
         writeCustomChar(basicFont[c1 - 32]);
     }
@@ -687,8 +686,7 @@ namespace HTERobot {
     //% weight=90
     //% group=OLED 
     
-    export function showUserText(line: number, str: string) {
-        let text = str;
+    export function showUserText(line:number, text:string) {
         setText(line, 0);
         for (let c of text) {
             putChar(c);
@@ -699,7 +697,7 @@ namespace HTERobot {
             // putChar(" ");
         }
     }
-	    /**
+	/**
      * OLED 12864 显示数字
      * @param line line num (8 pixels per line), eg: 0
      * @param n value , eg: 0
@@ -713,8 +711,7 @@ namespace HTERobot {
         HTERobot.showUserText(line, "" + n)
     }
 
-    function writeCustomChar(str: string) {
-        let c = str;
+    function writeCustomChar(c:string) {
         for (let i = 0; i < 8; i++) {
             writeData(c.charCodeAt(i));
         }
@@ -1271,6 +1268,4 @@ namespace HTERobot {
         temperature = voltage*3.3;
         return Math.round(temperature)   
     }
-
-
 }   
